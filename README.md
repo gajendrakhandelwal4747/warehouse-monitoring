@@ -55,10 +55,7 @@ docker compose logs -f monitoring-service
 | Command | Expected in monitoring-service log |
 |---|---|
 | `echo "sensor_id=t1; value=40" \| nc -u -w1 localhost 3344` | `ALARM [warehouse-1] TEMPERATURE sensor t1 = 40.0°C exceeds threshold 35.0°C` |
-| `echo "sensor_id=t1; value=30" \| nc -u -w1 localhost 3344` | nothing |
-| `echo "sensor_id=t1; value=35" \| nc -u -w1 localhost 3344` | nothing (35 is not above 35) |
 | `echo "sensor_id=h1; value=55" \| nc -u -w1 localhost 3355` | `ALARM [warehouse-1] HUMIDITY sensor h1 = 55.0% exceeds threshold 50.0%` |
-| `echo "sensor_id=h1; value=40" \| nc -u -w1 localhost 3355` | nothing |
 
 ### 5. Send bad input
 
