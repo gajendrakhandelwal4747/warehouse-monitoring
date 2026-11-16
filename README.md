@@ -40,14 +40,7 @@ sockets. Expected result: `BUILD SUCCESS`.
 docker compose up -d --build
 ```
 
-The first build downloads dependencies and takes a few minutes. Wait until both services are up:
-
-```bash
-docker compose logs warehouse-service monitoring-service | grep -E "listening|partitions assigned"
-```
-
-You should see `listening for TEMPERATURE readings on UDP port 3344`, `listening for HUMIDITY
-readings on UDP port 3355` and `partitions assigned: [sensor-measurements-0]`.
+The first build downloads dependencies and takes a few minutes. Wait until both services are up
 
 ### 3. Watch the alarm log
 
