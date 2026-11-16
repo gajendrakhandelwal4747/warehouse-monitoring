@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: warehouse-service
+  main:
+    keep-alive: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:29092}
+
+warehouse:
+  id: ${WAREHOUSE_ID:warehouse-1}
+  udp-ports:
+    TEMPERATURE: 3344
+    HUMIDITY: 3355
+
+logging:
+  level:
+    org.apache.kafka: WARN
